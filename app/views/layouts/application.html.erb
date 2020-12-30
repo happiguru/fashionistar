@@ -1,73 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ImproveEd</title>
+    <title>Fashionistar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-      <div class="container">
-        <a class="navbar-brand text-danger" href="/">Improved</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= link_to 'ILS List', root_path, class: "nav-link mx-1 bg-warning rounded text-dark" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Post', posts_path, class: "nav-link mx-1 bg-warning rounded text-dark" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'About', main_about_path, class: "nav-link mx-1 bg-warning rounded text-dark" %>
-            </li>
-            <li class="nav-item">
-              <%# <a class="nav-link" href="main/contact">Contact</a> %>
-              <%= link_to 'Contact', main_contact_path, class: "nav-link mx-1 bg-warning rounded text-dark" %>
-            </li>
-          </ul>
-          <p class="navbar-text float-right">
-            <% if current_user %>
-            <%= link_to 'New Post', new_post_path, class: "bg-primary py-2 px-2 rounded mx-2 text-dark" %>
-            <%=  link_to 'Sign Out', destroy_user_session_path, class: "bg-danger text-dark py-2 px-2 rounded", method: :delete %>
-            <% else %>
-              <%=  link_to 'Sign In', new_user_session_path, class: "bg-primary py-2 px-2 rounded mx-2 text-dark" %>
-              <%=  link_to 'Sign Up', new_user_registration_path, class: "bg-danger text-dark py-2 px-2 rounded" %>
-            <% end %>
-          </p>
-      </div>
-    </nav>
-    <div class="container">
-    <%= flash_notice %>
-    <%= flash_alert %>
-    <div class="row">
-      <aside class="col-12 col-lg-3">
-        <%= side_panel_on %>
-      </aside>
-       <%= yield %>
-    </div>
-    <footer class="fixed-bottom bg-primary">
-      <div class="container">
-        ImproveEd (Lekunze) <%= Time.now.year %>
-      </div>
-    </footer>
-
-     <script src="https://kit.fontawesome.com/cbdf2b0f0e.js" crossorigin="anonymous"></script>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%= yield %>
   </body>
 </html>
