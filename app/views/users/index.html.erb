@@ -1,0 +1,40 @@
+
+<section class="col-12 col-lg-9">
+    <h3>Find your LSA</h3>
+    <div class="">
+        <% @users.each do |user| %>
+        <article class="d-flex">
+            <div class="thumbnail">
+                <figure class="">
+                    <img class="rounded-circle" src="https://louisem.com/wp-content/uploads/2017/07/facebook-link-thumbnail-2017.jpg" height="32px" width="32px">
+                </figure>
+            </div>
+            <div class="ml-2">
+                <h4 class="bg-secondary rounded">Learning Support Assistant</h4>
+                <div class="">
+                    Name: <%= link_to user.fullname, user_path(user), class: 'username' %>
+                </div>
+                <div class="">
+                    Nationality: <%= user.nationality %>
+                </div>
+                <div class="">
+                    Gender: <%= user.gender %>
+                </div>
+                <div class="">
+                    <h5>Personal Statement</h5>
+                    <p>
+                        It is a long established fact that a reader will be distracted by the readable content of 
+                        a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+                        more-or-less normal distributio
+                    </p>
+                </div>
+                <div class="">
+                    <%= link_to user.username, user_path(user), class: 'username' %>
+                    <%= link_to user.username, user_path(user), class: 'username' %>
+                    <%= link_to user.username, user_path(user), class: 'username' %>
+                </div>
+            </div>
+        </article>    
+        <% end %>
+    <div>
+<section>

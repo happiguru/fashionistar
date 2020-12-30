@@ -1,0 +1,21 @@
+<%=  simple_form_for(@post) do |f| %>
+<%= f.error_notification %>
+  <div class="card mt-2">
+    <div class="card-header mb-2">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active"  href="#posts">Make a Post</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <%= f.input :postcontent, label: "And watch someone read", input_html: { class: "input mb-n4"}, wrapper: false, 
+        label_html: {class: "ml-2 label"}, placeholder: "Write a Post...", autofocus: true %>
+      </div>
+    </div>
+    <div class="mb-2">
+      <%= f.button :submit, class: "float-none float-md-right w-25 mr-md-3 bg-info" %>
+    </div>
+  <% end %>
+</div>

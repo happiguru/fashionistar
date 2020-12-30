@@ -1,0 +1,27 @@
+<div class="column px-0">
+    <nav class="panel pl-3">
+        <div class="prof-pic">
+            <figure class=" thumb">
+                <img class="rounded-circle" src="https://louisem.com/wp-content/uploads/2017/07/facebook-link-thumbnail-2017.jpg" height="100px" width="100px">
+            </figure>
+            <%= link_to 'PROFILE', user_path(current_user), class: "navbar-item" %>  
+        </div>
+        <div class="d-flex">
+            <div class="panel-block mr-1 text-center">
+                <div>
+                    <p class="heading">Following</p>
+                    <p class="panel-block"><%= current_user.followed_users.count  %></p>
+                </div>
+            </div>
+            <div class="panel-block text-center">
+                <div>
+                    <p class="heading">Followers</p>
+                    <p class="panel-block"><%= current_user.followers.count  %></p>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="side-links">
+    <a href="#" ><%= link_to 'HOME', root_path, class: "navbar-item" %></a>
+    <a href="#" ><%= link_to 'CONNECT', users_path, class: "navbar-item" %></a>
+</div>
